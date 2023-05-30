@@ -1,7 +1,7 @@
 # CREATE A EXCEL SHEET WITH NAMES A DN MAIL HEADING
 
 import pandas as pd
-import smtplib
+import smtplib,time
 
 
 your_email = "mail"
@@ -45,6 +45,7 @@ for idx in range(len(all_emails)):
     try:
         server.sendmail(your_email, [email], full_email)
         print(f'Email to {name},{email} successfully sent!')
+        time.sleep(1)
     except Exception as e:
         print('Email to {} could not be sent--------------------------------------------------------------because {}'.format(name, str(e)))
 
